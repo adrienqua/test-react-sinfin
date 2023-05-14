@@ -1,0 +1,44 @@
+@import "bootstrap"
+@import "vars"
+
+#root
+  background-color: $lightgrey
+  min-height: 100vh
+
+
+.rounded-container
+  background-color: $white
+  border-radius: 6px
+  margin-bottom: 5px
+  padding: 20px
+
+
+.table-infos table 
+  tr>th 
+    text-align: left
+    padding-left: 25px
+  tr>td 
+    text-align: right
+    padding-right: 25px
+  
+
+
+table ul 
+  margin-bottom: 0
+  list-style: none
+  li
+    transition: .3s 
+ 
+
+.character-list-item
+  min-height: 130px
+  justify-content: center
+  display: flex
+  flex-direction: column
+  text-decoration: none
+  transition: .3s
+  color: $black
+  &:hover 
+    background-color: $primary
+    color: $white
+  

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import HomePage from "./js/pages/HomePage"
+import Navbar from "./js/common/Navbar"
+import React from "react"
+import BookDetails from "./js/pages/BookDetails"
+import CharacterDetails from "./js/pages/CharacterDetails"
+import Characters from "./js/pages/Characters"
+import HouseDetails from "./js/pages/HouseDetails"
+
+import "./css/app.min.css"
+import "./css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <React.Fragment>
+                <Navbar />
+                <div className="container mt-4">
+                    <Routes>
+                        <Route path="/houses/:id" element={<HouseDetails />} />
+                        <Route
+                            path="/characters/:id"
+                            element={<CharacterDetails />}
+                        />
+                        <Route path="/characters" element={<Characters />} />
+                        <Route path="/books/:id" element={<BookDetails />} />
+                        <Route path="/" exact element={<HomePage />} />
+                    </Routes>
+                </div>
+            </React.Fragment>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App
